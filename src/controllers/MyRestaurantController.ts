@@ -66,6 +66,8 @@ const updateMyRestaurant = async (req: Request, res: Response) => {
         // restaurant.estimatedDeliveryTime = req.body.estimatedDeliveryTime
         restaurant.menuItems = req.body.menuItems
         restaurant.lastUpdated = new Date();
+        restaurant.estimatedDeliveryTime = req.body.estimatedDeliveryTime;
+
 
         if(req.file){
             const imageUrl = await UploadImage(req.file as Express.Multer.File)
