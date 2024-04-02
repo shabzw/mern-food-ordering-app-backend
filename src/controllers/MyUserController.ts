@@ -24,7 +24,7 @@ const createCurrentUser = async(req: Request, res: Response) => {
     try{
         const {auth0Id, email} = req.body;
         console.log(auth0Id+"This is authID")
-        const existingUser = await User.findOne({email})
+        const existingUser = await User.findOne({auth0Id})
         console.log(existingUser)
         
         if(existingUser){
